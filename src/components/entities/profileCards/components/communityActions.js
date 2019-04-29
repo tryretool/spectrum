@@ -42,7 +42,7 @@ export const UnconnectedCommunityActions = (props: Props) => {
           </OutlineButton>
         )}
 
-        {!isOwner && (
+        {false && !isOwner && (
           <OutlineButton
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}

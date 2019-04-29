@@ -75,4 +75,5 @@ export const LeftActionContainer = styled.span`
   display: flex;
   align-items: center;
   cursor: pointer;
+  display: none;
 `;

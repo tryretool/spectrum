@@ -45,6 +45,8 @@ import GlobalTitlebar from 'src/views/globalTitlebar';
 import NoUsernameHandler from 'src/views/authViewHandler/noUsernameHandler';
 import { NavigationContext } from 'src/helpers/navigation-context';
 
+const SINGLE_COMMUNITY_NAME = 'spectrum';
+
 const Explore = Loadable({
   loader: () => import('./views/explore' /* webpackChunkName: "Explore" */),
   loading: ({ isLoading }) => isLoading && <LoadingView />,
@@ -136,7 +138,7 @@ const ErrorFallback = Loadable({
 
 const HomeViewRedirectFallback = signedOutFallback(HomeViewRedirect, Pages);
 const HomeFallback = signedOutFallback(HomeViewRedirect, () => (
-  <Redirect to="/" />
+  <Redirect to={`/${SINGLE_COMMUNITY_NAME}`} />
 ));
 const LoginFallback = signedOutFallback(() => <Redirect to="/" />, Login);
 const CommunityLoginFallback = signedOutFallback(
@@ -325,11 +327,7 @@ class Routes extends React.Component<Props, State> {
                     https://reacttraining.com/react-router/web/api/Switch
                   */}
                   <Switch location={isModal ? this.previousLocation : location}>
-                    <Route
-                      exact
-                      path="/"
-                      component={HomeViewRedirectFallback}
-                    />
+                    <Route exact path="/" component={HomeFallback} />
                     <Route exact path="/home" component={HomeFallback} />
 
                     {/* Public Business Pages */}
