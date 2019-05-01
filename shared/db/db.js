@@ -25,7 +25,11 @@ try {
   ca = fs.readFileSync(path.join(process.cwd(), 'cacert'));
 } catch (err) {}
 
-if (!ca && IS_PROD)
+if (process.env.NO_SSL_RETHINKDB) {
+  ca = null;
+}
+
+if (!ca && IS_PROD && !process.env.NO_SSL_RETHINKDB)
   throw new Error(
     'Please provide the SSL certificate to connect to the production database in a file called `cacert` in the root directory.'
   );

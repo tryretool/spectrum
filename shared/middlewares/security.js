@@ -29,7 +29,9 @@ function securityMiddleware(
       })
     );
 
-    server.use(express_enforces_ssl());
+    if (!process.env.NO_ENFORCE_SSL) {
+      server.use(express_enforces_ssl());
+    }
   }
 
   // The xssFilter middleware sets the X-XSS-Protection header to prevent

@@ -1,0 +1,61 @@
+version: '3'
+services:
+  hyperion:
+    image: 'test'
+    env_file: ./docker.env
+    command: bash -c "node ./build-hyperion/main.js"
+    depends_on:
+      - redis
+      - rethinkdb
+  api:
+    image: 'test'
+    env_file: ./docker.env
+    command: bash -c "node ./build-api/main.js"
+    depends_on:
+      - redis
+      - rethinkdb
+  athena:
+    image: 'test'
+    env_file: ./docker.env
+    command: bash -c "node ./build-athena/main.js"
+    depends_on:
+      - redis
+      - rethinkdb
+  hermes:
+    image: 'test'
+    env_file: ./docker.env
+    command: bash -c "node ./build-hermes/main.js"
+    depends_on:
+      - redis
+      - rethinkdb
+  vulcan:
+    image: 'test'
+    env_file: ./docker.env
+    command: bash -c "node ./build-vulcan/main.js"
+    depends_on:
+      - redis
+      - rethinkdb
+  mercury:
+    image: 'test'
+    env_file: ./docker.env
+    command: bash -c "node ./build-mercury/main.js"
+    depends_on:
+      - redis
+      - rethinkdb
+  redis:
+    image: 'redis'
+    volumes:
+      - ./redis_data:/data
+  rethinkdb:
+    image: 'rethinkdb'
+    volumes:
+      - ./rethinkdb_data:/data
+  nginx:
+    image: nginx
+    ports:
+      - '3000:80'
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - hyperion
+      - api

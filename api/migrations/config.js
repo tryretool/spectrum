@@ -16,9 +16,14 @@ try {
   ca = fs.readFileSync(path.join(process.cwd(), 'cacert'));
 } catch (err) {}
 
-const RUN_IN_PROD = !!process.env.AWS_RETHINKDB_PASSWORD;
+if (process.env.NO_SSL_RETHINKDB) {
+  ca = null;
+}
 
-if (!ca && RUN_IN_PROD)
+const RUN_IN_PROD =
+  !!process.env.AWS_RETHINKDB_PASSWORD || process.env.NO_SSL_RETHINKDB;
+
+if (!ca && IS_PROD && !process.env.NO_SSL_RETHINKDB)
   throw new Error(
     'Please provide the SSL certificate to connect to the production database in a file called `cacert` in the root directory.'
   );
@@ -32,7 +37,7 @@ if (RUN_IN_PROD) debug('Running migration in production...');
 module.exports = !RUN_IN_PROD
   ? DEFAULT_CONFIG
   : Object.assign({}, DEFAULT_CONFIG, {
-      password: process.env.AWS_RETHINKDB_PASSWORD,
+      password: process.env.AWS_RETHINKDB_PASSWORD || undefined,
       host: process.env.AWS_RETHINKDB_URL,
       port: process.env.AWS_RETHINKDB_PORT,
       ...(ca
