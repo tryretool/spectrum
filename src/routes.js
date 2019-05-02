@@ -137,9 +137,10 @@ const ErrorFallback = Loadable({
 });
 
 const HomeViewRedirectFallback = signedOutFallback(HomeViewRedirect, Pages);
-const HomeFallback = signedOutFallback(HomeViewRedirect, () => (
-  <Redirect to={`/${SINGLE_COMMUNITY_NAME}`} />
-));
+const HomeFallback = signedOutFallback(
+  () => <Redirect to={`/${SINGLE_COMMUNITY_NAME}`} />,
+  () => <Redirect to={`/${SINGLE_COMMUNITY_NAME}`} />
+);
 const LoginFallback = signedOutFallback(() => <Redirect to="/" />, Login);
 const CommunityLoginFallback = signedOutFallback(
   props => <Redirect to={`/${props.match.params.communitySlug}`} />,
