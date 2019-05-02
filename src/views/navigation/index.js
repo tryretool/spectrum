@@ -43,7 +43,7 @@ const Navigation = (props: Props) => {
     return (
       <NavigationContext.Consumer>
         {({ navigationIsOpen, setNavigationIsOpen }) => (
-          <NavigationWrapper data-cy="navigation-bar" isOpen={navigationIsOpen}>
+          <NavigationWrapper data-cy="navigation-bar" hide>
             <Overlay
               isOpen={navigationIsOpen}
               onClick={() => setNavigationIsOpen(false)}

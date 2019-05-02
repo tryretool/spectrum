@@ -86,6 +86,8 @@ export const NavigationWrapper = styled.div`
   @media (min-width: ${MIN_WIDTH_TO_EXPAND_NAVIGATION}px) {
     width: ${NAVBAR_EXPANDED_WIDTH}px;
   }
+
+  visibility: ${props => (props.hide ? 'hidden' : 'inherit')};
 `;
 
 export const DesktopMenuIconsCover = styled.div`
