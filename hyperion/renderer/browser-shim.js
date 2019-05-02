@@ -4,7 +4,7 @@
 global.window = {
   location: {
     protocol: 'https:',
-    host: 'spectrum.chat',
+    host: 'community.tryretool.com',
     hash: '',
   },
   addEventListener: () => {},

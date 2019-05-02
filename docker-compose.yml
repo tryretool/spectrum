@@ -1,42 +1,42 @@
 version: '3'
 services:
   hyperion:
-    image: 'test'
+    image: 'retool-spectrum'
     env_file: ./docker.env
     command: bash -c "node ./build-hyperion/main.js"
     depends_on:
       - redis
       - rethinkdb
   api:
-    image: 'test'
+    image: 'retool-spectrum'
     env_file: ./docker.env
     command: bash -c "node ./build-api/main.js"
     depends_on:
       - redis
       - rethinkdb
   athena:
-    image: 'test'
+    image: 'retool-spectrum'
     env_file: ./docker.env
     command: bash -c "node ./build-athena/main.js"
     depends_on:
       - redis
       - rethinkdb
   hermes:
-    image: 'test'
+    image: 'retool-spectrum'
     env_file: ./docker.env
     command: bash -c "node ./build-hermes/main.js"
     depends_on:
       - redis
       - rethinkdb
   vulcan:
-    image: 'test'
+    image: 'retool-spectrum'
     env_file: ./docker.env
     command: bash -c "node ./build-vulcan/main.js"
     depends_on:
       - redis
       - rethinkdb
   mercury:
-    image: 'test'
+    image: 'retool-spectrum'
     env_file: ./docker.env
     command: bash -c "node ./build-mercury/main.js"
     depends_on:

@@ -161,7 +161,6 @@ export const NavigationGrid = styled.div`
         padding-top: 40px;
       `}
   }
-  display: none;
 `;
 
 export const AvatarGrid = styled.div`

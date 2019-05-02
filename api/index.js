@@ -21,6 +21,7 @@ import rateLimiter from 'shared/middlewares/rate-limiter';
 import middlewares from './routes/middlewares';
 import authRoutes from './routes/auth';
 import apiRoutes from './routes/api';
+import { PROD_DOMAIN } from 'shared/constants';
 import type { DBUser } from 'shared/types';
 import type { Loader } from './loaders/types';
 
@@ -57,7 +58,7 @@ if (!process.env.TEST_DB) {
 
 // Security middleware.
 addSecurityMiddleware(app, { enableNonce: false, enableCSP: false });
-if (process.env.NODE_ENV === 'production' && !process.env.FORCE_DEV) {
+if (false && !process.env.FORCE_DEV) {
   app.use(csrf);
 }
 
@@ -76,7 +77,7 @@ apolloServer.applyMiddleware({ app, path: '/api', cors: corsOptions });
 app.use('/', (req: express$Request, res: express$Response) => {
   res.redirect(
     process.env.NODE_ENV === 'production' && !process.env.FORCE_DEV
-      ? 'https://spectrum.chat'
+      ? `https://${PROD_DOMAIN}`
       : 'http://localhost:3000'
   );
 });

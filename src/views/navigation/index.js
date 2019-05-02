@@ -233,36 +233,38 @@ const Navigation = (props: Props) => {
                 {({ match }) => <NotificationsTab isActive={!!match} />}
               </Route>
 
-              <Route path="/explore">
-                {({ match }) => (
-                  <Tooltip
-                    content="Explore"
-                    placement={'left'}
-                    isEnabled={!isWideViewport}
-                  >
-                    <AvatarGrid
-                      isActive={
-                        match && match.url === '/explore' && match.isExact
-                      }
+              {false && (
+                <Route path="/explore">
+                  {({ match }) => (
+                    <Tooltip
+                      content="Explore"
+                      placement={'left'}
+                      isEnabled={!isWideViewport}
                     >
-                      <AvatarLink
-                        to={'/explore'}
-                        data-cy="navigation-explore"
-                        onClick={() => setNavigationIsOpen(false)}
-                        {...getAccessibilityActiveState(
+                      <AvatarGrid
+                        isActive={
                           match && match.url === '/explore' && match.isExact
-                        )}
+                        }
                       >
-                        <IconWrapper>
-                          <Icon glyph="explore" />
-                        </IconWrapper>
+                        <AvatarLink
+                          to={'/explore'}
+                          data-cy="navigation-explore"
+                          onClick={() => setNavigationIsOpen(false)}
+                          {...getAccessibilityActiveState(
+                            match && match.url === '/explore' && match.isExact
+                          )}
+                        >
+                          <IconWrapper>
+                            <Icon glyph="explore" />
+                          </IconWrapper>
 
-                        <Label>Explore</Label>
-                      </AvatarLink>
-                    </AvatarGrid>
-                  </Tooltip>
-                )}
-              </Route>
+                          <Label>Explore</Label>
+                        </AvatarLink>
+                      </AvatarGrid>
+                    </Tooltip>
+                  )}
+                </Route>
+              )}
 
               <Route path="/users/:username">
                 {({ match }) => (
@@ -310,7 +312,7 @@ const Navigation = (props: Props) => {
                 {...props}
               />
 
-              {currentUser && (
+              {false && currentUser && (
                 <React.Fragment>
                   <Divider />
                   <Route path="/new/community">

@@ -8,6 +8,7 @@ import {
   FacebookButton,
   TwitterButton,
 } from 'src/components/button';
+import { PROD_DOMAIN } from 'shared/constants';
 import { ButtonRow, InputRow, Input } from './style';
 import { Description } from '../../style';
 import { Loading } from 'src/components/loading';
@@ -20,7 +21,7 @@ const Share = ({ community, onboarding }) => {
     <div>
       <ButtonRow>
         <FacebookButton
-          href={`https://www.facebook.com/sharer/sharer.php?u=https://spectrum.chat/${encodeURIComponent(
+          href={`https://www.facebook.com/sharer/sharer.php?u=https://${PROD_DOMAIN}/${encodeURIComponent(
             community.slug
           )}&t=Come hang out with me in the ${
             community.name
@@ -32,7 +33,7 @@ const Share = ({ community, onboarding }) => {
         <TwitterButton
           href={`https://twitter.com/share?text=Come hang out with me in the ${
             community.name
-          } community on @withspectrum!&url=https://spectrum.chat/${encodeURIComponent(
+          } community on @withspectrum!&url=https://${PROD_DOMAIN}/${encodeURIComponent(
             community.slug
           )}`}
         >
@@ -42,10 +43,10 @@ const Share = ({ community, onboarding }) => {
 
       <Clipboard
         component="div"
-        data-clipboard-text={`https://spectrum.chat/${community.slug}`}
+        data-clipboard-text={`https://${PROD_DOMAIN}/${community.slug}`}
       >
         <InputRow>
-          <Input>{`https://spectrum.chat/${community.slug}`}</Input>
+          <Input>{`https://${PROD_DOMAIN}/${community.slug}`}</Input>
         </InputRow>
       </Clipboard>
 

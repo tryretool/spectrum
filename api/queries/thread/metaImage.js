@@ -3,6 +3,7 @@ import type { GraphQLContext } from '../../';
 import type { DBThread } from 'shared/types';
 import generateImageFromText from '../../utils/generate-thread-meta-image-from-text';
 import { signImageUrl } from 'shared/imgix';
+import { PROD_DOMAIN } from 'shared/constants';
 
 export default async (thread: DBThread, _: any, ctx: GraphQLContext) => {
   const { loaders } = ctx;
@@ -15,7 +16,7 @@ export default async (thread: DBThread, _: any, ctx: GraphQLContext) => {
     title: watercooler
       ? `Chat with the ${community.name} community`
       : content.title,
-    footer: `spectrum.chat/${community.slug}`,
+    footer: `${PROD_DOMAIN}/${community.slug}`,
   });
 
   if (!imageUrl) return null;

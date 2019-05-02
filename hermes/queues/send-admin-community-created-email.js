@@ -16,9 +16,9 @@ export default (job: Job<AdminCommunityCreatedEmailJobData>): Promise<void> => {
     return sendEmail({
       templateId: ADMIN_COMMUNITY_CREATED_TEMPLATE,
       to: [
-        { email: 'brian@spectrum.chat ' },
-        { email: 'max@spectrum.chat ' },
-        { email: 'bryn@spectrum.chat ' },
+        // { email: 'brian@spectrum.chat ' },
+        // { email: 'max@spectrum.chat ' },
+        // { email: 'bryn@spectrum.chat ' },
       ],
       dynamic_template_data: {
         subject: `New community: ${community.name}`,

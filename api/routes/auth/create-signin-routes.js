@@ -10,10 +10,11 @@
 import passport from 'passport';
 import { URL } from 'url';
 import isSpectrumUrl from '../../utils/is-spectrum-url';
+import { PROD_DOMAIN } from 'shared/constants';
 
 const IS_PROD = process.env.NODE_ENV === 'production';
 const FALLBACK_URL = IS_PROD
-  ? 'https://spectrum.chat/home'
+  ? `https://${PROD_DOMAIN}/home`
   : 'http://localhost:3000/home';
 
 type Strategy = 'twitter' | 'facebook' | 'github' | 'google';

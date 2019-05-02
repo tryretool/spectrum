@@ -1,10 +1,11 @@
 // @flow
 const debug = require('debug')('shared:send-web-push');
 import webPush from 'web-push';
+import { PROD_DOMAIN } from 'shared/constants';
 
 try {
   webPush.setVapidDetails(
-    'https://spectrum.chat',
+    `https://${PROD_DOMAIN}`,
     process.env.VAPID_PUBLIC_KEY,
     process.env.VAPID_PRIVATE_KEY
   );
