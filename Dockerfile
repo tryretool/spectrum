@@ -1,5 +1,7 @@
 FROM node:10.13
 
+RUN apt-get update && apt-get install -y curl vim
+
 WORKDIR /spectrum
 
 COPY . /spectrum
