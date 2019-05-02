@@ -45,7 +45,7 @@ import GlobalTitlebar from 'src/views/globalTitlebar';
 import NoUsernameHandler from 'src/views/authViewHandler/noUsernameHandler';
 import { NavigationContext } from 'src/helpers/navigation-context';
 
-const SINGLE_COMMUNITY_NAME = 'spectrum';
+const SINGLE_COMMUNITY_NAME = 'retool';
 
 const Explore = Loadable({
   loader: () => import('./views/explore' /* webpackChunkName: "Explore" */),
