@@ -35,15 +35,16 @@ const GITHUB_OAUTH_CLIENT_SECRET = IS_PROD
   : process.env.GITHUB_OAUTH_CLIENT_SECRET_DEVELOPMENT;
 
 const TWITTER_OAUTH_CLIENT_ID = IS_PROD
-  ? 'vxmsICGyIIoT5NEYi1I8baPrf'
+  ? process.env.TWITTER_OAUTH_CLIENT_ID || 'vxmsICGyIIoT5NEYi1I8baPrf'
   : 'Qk7BWFe44JKswEw2sNaDAA4x7';
 
 const GOOGLE_OAUTH_CLIENT_ID = IS_PROD
-  ? '923611718470-chv7p9ep65m3fqqjr154r1p3a5j6oidc.apps.googleusercontent.com'
+  ? process.env.GOOGLE_OAUTH_CLIENT_ID ||
+    '923611718470-chv7p9ep65m3fqqjr154r1p3a5j6oidc.apps.googleusercontent.com'
   : '923611718470-hjribk5128dr3s26cbp5cbdecigrsjsp.apps.googleusercontent.com';
 
 const GITHUB_OAUTH_CLIENT_ID = IS_PROD
-  ? '208a2e8684d88883eded'
+  ? process.env.GITHUB_OAUTH_CLIENT_ID || '208a2e8684d88883eded'
   : 'ed3e924f4a599313c83b';
 
 const isSerializedJSON = (str: string) =>
