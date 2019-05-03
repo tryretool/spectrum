@@ -57,7 +57,7 @@ class DesktopAppUpsell extends React.Component<{}, State> {
   render() {
     const { isVisible } = this.state;
 
-    if (!isVisible) return null;
+    if (!isVisible || true) return null;
 
     return (
       <Container>

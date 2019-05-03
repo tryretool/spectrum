@@ -51,7 +51,7 @@ class DesktopAppUpsell extends React.Component<Props, State> {
     const { currentUser } = this.props;
     const { isVisible } = this.state;
 
-    if (!isVisible || !currentUser) return null;
+    if (!isVisible || !currentUser || true) return null;
 
     return (
       <SidebarSection>
