@@ -36,35 +36,35 @@ export const SEND_ADMIN_USER_REPORTED_EMAIL = 'send admin user reported email';
 export const SENDGRID_WEBHOOK_EVENT = 'process sendgrid webhook event';
 
 export const NEW_MESSAGE_TEMPLATE = IS_PROD
-  ? 'd-1379042b64ba4c6093fecaec7161480a'
+  ? 'd-136648ee3f444379af3e320a5beede7f'
   : 'd-7a4c14fd440146f1b1cfcafb633bb040';
 export const NEW_MENTION_THREAD_TEMPLATE = IS_PROD
-  ? 'd-343ec51df23943e88d0709aa8e30312b'
-  : 'd-ff421ea0112a4525b6615bcc666ede00';
+  ? 'd-a07e5f76446642dda475903737e72280'
+  : 'd-b5558f7e9b1d430aa772c2c24ecb8107';
 export const NEW_MENTION_MESSAGE_TEMPLATE = IS_PROD
-  ? 'd-5ef46b71baee4c67bc46ab867e14d5bb'
+  ? 'd-077e3a46dfe7477187dddd06adb70e09'
   : 'd-637189bc871744e9846694bff9f572ae';
 export const NEW_DIRECT_MESSAGE_TEMPLATE = IS_PROD
-  ? 'd-d959535dd2304830ad14e1850297f46d'
+  ? 'd-a1fbb4abfcf143dcb229d45ee5d68c5a'
   : 'd-3e289af9efe748308be2dde1d3786c0d';
 export const NEW_USER_WELCOME_TEMPLATE = IS_PROD
   ? 'd-57c4111b847d4554b5d71f9fcf9170f8'
   : 'd-2e46e5b65abc42b78941fbe027be4cd5';
 export const COMMUNITY_INVITE_TEMPLATE = IS_PROD
-  ? 'd-566d2a20ca9246108a55a4b4037b9e53'
+  ? 'd-5e909370a0534371a1916489d7b963fb'
   : 'd-69b2e17b7a0f46048dcf4083ad4f9c48';
 export const NEW_COMMUNITY_WELCOME_TEMPLATE = IS_PROD
   ? 'd-3a72aa9dec664ab4badd20e17586f477'
   : 'd-dc7b4f048f4c460f9dd368fd3796421b';
 
 export const NEW_THREAD_CREATED_TEMPLATE = IS_PROD
-  ? 'd-2809d28ff1cc4d89a503e04de3388411'
+  ? 'd-1e4ff6df58c244d8a1da610629bc63a1'
   : 'd-084c11332981443388ebdae05d0a2ff4';
 export const DIGEST_TEMPLATE = IS_PROD
   ? 'd-54e8d4905da64158a98ddb92c9330583'
   : 'd-5e52250c25be4654af82172970551919';
 export const EMAIL_VALIDATION_TEMPLATE = IS_PROD
-  ? 'd-8cd6c640e2d944c7a4bb8877722ff00f'
+  ? 'd-54707b1f7b4444f29d4f434c4f068b52'
   : 'd-9fbb3cc969364050aac891c255d31209';
 export const ADMINISTRATOR_EMAIL_VALIDATION_TEMPLATE = IS_PROD
   ? 'd-c7ab6234c65b47d88413d9deaae0f7f1'
