@@ -25,7 +25,7 @@ export const generateOAuthToken = (code: string, redirect_uri: string): Promise<
         code: code,
         scope:
           'users:read.email,users:read,chat:write,bot,chat:write:bot,channels:read,groups:read',
-        client_id: '201769987287.271382863153',
+        client_id: '3818108696.625188890277',
         client_secret: SLACK_SECRET,
         redirect_uri,
       })
