@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { Img, FallbackImg, LoadingImg } from './style';
 import VisibilitySensor from 'react-visibility-sensor';
+import { RELATIVE_ROOT } from 'shared/constants';
 
 type Props = {
   src: any,
@@ -17,8 +18,8 @@ export default class Image extends React.Component<Props> {
     const { ...rest } = this.props;
     const fallbackSrc =
       type === 'user'
-        ? '/img/default_avatar.svg'
-        : '/img/default_community.svg';
+        ? `${RELATIVE_ROOT}/img/default_avatar.svg`
+        : `${RELATIVE_ROOT}/img/default_community.svg`;
 
     return (
       <VisibilitySensor>

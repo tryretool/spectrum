@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { StyledHeader, Heading, Subheading, HeaderText } from './style';
 import { UserAvatar, CommunityAvatar } from '../avatar';
 

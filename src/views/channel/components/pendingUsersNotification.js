@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import compose from 'recompose/compose';
 import { displayLoadingCard } from 'src/components/loading';
 import getPendingUsersQuery from 'shared/graphql/queries/channel/getChannelPendingUsers';

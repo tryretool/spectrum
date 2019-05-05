@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import theme from 'shared/theme';
 import Card from 'src/components/card';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { FlexCol, H1, H2, H3, Span } from 'src/components/globals';
 import { MEDIA_BREAK } from 'src/components/layout';
 

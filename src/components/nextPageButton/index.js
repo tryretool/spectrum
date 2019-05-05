@@ -3,7 +3,8 @@ import React from 'react';
 import { Spinner } from '../globals';
 import { HasNextPage, NextPageButton } from './style';
 import VisibilitySensor from 'react-visibility-sensor';
-import { Link, type Location } from 'react-router-dom';
+import { type Location } from 'react-router-dom';
+import Link from 'src/components/link';
 
 type Props = {
   isFetchingMore?: boolean,

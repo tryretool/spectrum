@@ -5,6 +5,7 @@ const { Strategy: TwitterStrategy } = require('passport-twitter');
 const { Strategy: FacebookStrategy } = require('passport-facebook');
 const { Strategy: GoogleStrategy } = require('passport-google-oauth2');
 const { Strategy: GitHubStrategy } = require('passport-github2');
+const { RELATIVE_ROOT } = require('shared/constants');
 const {
   getUserById,
   createOrFindUser,
@@ -90,7 +91,7 @@ const init = () => {
         consumerKey: TWITTER_OAUTH_CLIENT_ID,
         consumerSecret: TWITTER_OAUTH_CLIENT_SECRET,
         callbackURL: IS_PROD
-          ? '/auth/twitter/callback'
+          ? `${RELATIVE_ROOT}/auth/twitter/callback`
           : 'http://localhost:3001/auth/twitter/callback',
         includeEmail: true,
       },
@@ -153,7 +154,7 @@ const init = () => {
       {
         clientID: FACEBOOK_OAUTH_CLIENT_ID,
         clientSecret: FACEBOOK_OAUTH_CLIENT_SECRET,
-        callbackURL: '/auth/facebook/callback',
+        callbackURL: `${RELATIVE_ROOT}/auth/facebook/callback`,
         profileFields: [
           'id',
           'displayName',
@@ -218,7 +219,7 @@ const init = () => {
       {
         clientID: GOOGLE_OAUTH_CLIENT_ID,
         clientSecret: GOOGLE_OAUTH_CLIENT_SECRET,
-        callbackURL: '/auth/google/callback',
+        callbackURL: `${RELATIVE_ROOT}/auth/google/callback`,
       },
       (token, tokenSecret, profile, done) => {
         const name =
@@ -282,7 +283,7 @@ const init = () => {
       {
         clientID: GITHUB_OAUTH_CLIENT_ID,
         clientSecret: GITHUB_OAUTH_CLIENT_SECRET,
-        callbackURL: '/auth/github/callback',
+        callbackURL: `${RELATIVE_ROOT}/auth/github/callback`,
         scope: ['user'],
         passReqToCallback: true,
       },

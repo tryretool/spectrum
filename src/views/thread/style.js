@@ -1,7 +1,7 @@
 // @flow
 import theme from 'shared/theme';
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { OutlineButton } from 'src/components/button';
 import Column from 'src/components/column';
 import { MEDIA_BREAK } from 'src/components/layout';

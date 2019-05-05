@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import replace from 'string-replace-to-array';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 const MARKDOWN_LINK = /(?:\[(.*?)\]\((.*?)\))/g;
 import { SPECTRUM_URLS } from 'shared/regexps';
 

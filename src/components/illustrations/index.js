@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { zIndex } from '../globals';
 import { MEDIA_BREAK } from 'src/components/layout';
+import { RELATIVE_ROOT } from 'shared/constants';
 
 export const Cluster = styled.img`
   position: absolute;
@@ -91,7 +92,10 @@ export const ConversationWrapper = styled.div`
 
 export const Conversation = () => (
   <ConversationWrapper>
-    <img src="/img/conversation.svg" alt="conversation screenshot" />
+    <img
+      src={`${RELATIVE_ROOT}/img/conversation.svg`}
+      alt="conversation screenshot"
+    />
   </ConversationWrapper>
 );
 
@@ -110,7 +114,9 @@ const DiscoverImage = styled.img`
   }
 `;
 
-export const Discover = () => <DiscoverImage src="/img/discover.png" alt="" />;
+export const Discover = () => (
+  <DiscoverImage src={`${RELATIVE_ROOT}/img/discover.png`} alt="" />
+);
 
 const EmptyImage = styled.img`
   position: absolute;
@@ -121,7 +127,9 @@ const EmptyImage = styled.img`
   z-index: ${zIndex.background};
 `;
 
-export const Empty = () => <EmptyImage src="/img/empty.svg" alt="" />;
+export const Empty = () => (
+  <EmptyImage src={`${RELATIVE_ROOT}/img/empty.svg`} alt="" />
+);
 
 const InlineSvg = styled.svg`
   position: absolute;

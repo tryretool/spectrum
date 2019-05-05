@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'src/components/head';
 import getThreadLink from 'src/helpers/get-thread-link';
 import generateMetaInfo from 'shared/generate-meta-info';
-import { PROD_DOMAIN } from 'shared/constants';
+import { PROD_URL_ROOT } from 'shared/constants';
 import type { ThreadInfoType } from 'shared/graphql/fragments/thread/threadInfo';
 
 type Props = {
@@ -41,7 +41,7 @@ const ThreadHead = (props: Props) => {
     >
       <link
         rel="canonical"
-        href={`https://${PROD_DOMAIN}${getThreadLink(thread)}`}
+        href={`https://${PROD_URL_ROOT}${getThreadLink(thread)}`}
       />
       {metaImage && <meta name="twitter:card" content="summary_large_image" />}
       <meta
@@ -54,7 +54,7 @@ const ThreadHead = (props: Props) => {
       />
       <meta
         property="article:author"
-        content={`https://${PROD_DOMAIN}/users/@${author.user.username}`}
+        content={`https://${PROD_URL_ROOT}/users/@${author.user.username}`}
       />
       <meta
         property="article:section"

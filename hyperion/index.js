@@ -16,7 +16,7 @@ import Raven from 'shared/raven';
 import toobusy from 'shared/middlewares/toobusy';
 import rateLimiter from 'shared/middlewares/rate-limiter';
 import addSecurityMiddleware from 'shared/middlewares/security';
-import { PROD_DOMAIN } from 'shared/constants';
+import { PROD_URL_ROOT } from 'shared/constants';
 
 const PORT = process.env.PORT || 3006;
 const ONE_HOUR = 3600;
@@ -100,7 +100,7 @@ app.use('/api', (req: express$Request, res: express$Response) => {
   const redirectUrl = `${req.baseUrl}${req.path}`;
   res.redirect(
     req.method === 'POST' || req.xhr ? 307 : 301,
-    `https://${PROD_DOMAIN}${redirectUrl}`
+    `https://${PROD_URL_ROOT}${redirectUrl}`
   );
 });
 
@@ -108,7 +108,7 @@ app.use('/auth', (req: express$Request, res: express$Response) => {
   const redirectUrl = `${req.baseUrl}${req.path}`;
   res.redirect(
     req.method === 'POST' || req.xhr ? 307 : 301,
-    `https://${PROD_DOMAIN}${redirectUrl}`
+    `https://${PROD_URL_ROOT}${redirectUrl}`
   );
 });
 
@@ -116,7 +116,7 @@ app.use('/websocket', (req: express$Request, res: express$Response) => {
   const redirectUrl = `${req.baseUrl}${req.path}`;
   res.redirect(
     req.method === 'POST' || req.xhr ? 307 : 301,
-    `https://${PROD_DOMAIN}${redirectUrl}`
+    `https://${PROD_URL_ROOT}${redirectUrl}`
   );
 });
 

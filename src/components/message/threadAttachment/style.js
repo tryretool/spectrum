@@ -1,7 +1,7 @@
 // @flow
 import styled, { createGlobalStyle } from 'styled-components';
 import theme from 'shared/theme';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { tint, zIndex } from 'src/components/globals';
 
 export const Container = styled.div``;

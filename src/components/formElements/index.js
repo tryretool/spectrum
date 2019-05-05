@@ -2,6 +2,7 @@
 import * as React from 'react';
 import Icon from 'src/components/icon';
 import { WhiteOutlineButton } from 'src/components/button';
+import { RELATIVE_ROOT } from 'shared/constants';
 import type { GetUserType } from 'shared/graphql/queries/user/getUser';
 import type { GetCommunityType } from 'shared/graphql/queries/community/getCommunity';
 
@@ -75,8 +76,8 @@ export const PhotoInput = (props: PhotoInputProps) => {
     visible = true;
     src =
       type === 'user'
-        ? '/img/default_avatar.svg'
-        : '/img/default_community.svg';
+        ? `${RELATIVE_ROOT}/img/default_avatar.svg`
+        : `${RELATIVE_ROOT}/img/default_community.svg`;
   }
 
   return (

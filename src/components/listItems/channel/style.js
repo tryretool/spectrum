@@ -2,7 +2,7 @@
 import theme from 'shared/theme';
 import styled from 'styled-components';
 import { Truncate } from 'src/components/globals';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 
 export const ChannelContainer = styled.div`
   display: flex;

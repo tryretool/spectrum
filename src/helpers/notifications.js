@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import Icon from '../components/icon';
 import { HorizontalRuleWithIcon } from '../components/globals';
 import { ChatMessage } from '../views/notifications/style';

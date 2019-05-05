@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import { Line, Paragraph, BlockQuote } from 'src/components/message/style';
 import {

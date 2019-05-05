@@ -1,7 +1,7 @@
 // @flow
 import styled, { css } from 'styled-components';
 import theme from 'shared/theme';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { Truncate, tint } from 'src/components/globals';
 import { MEDIA_BREAK } from 'src/components/layout';
 import { CardStyles } from 'src/views/viewHelpers';

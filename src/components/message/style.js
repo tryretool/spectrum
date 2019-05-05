@@ -1,7 +1,7 @@
 // @flow
 import theme from 'shared/theme';
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { SvgWrapper } from 'src/components/icon';
 import { Truncate, monoStack, hexa } from 'src/components/globals';
 import { Wrapper as EditorWrapper } from '../rich-text-editor/style';

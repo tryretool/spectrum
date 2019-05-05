@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import Badge from 'src/components/badges';
 import { UserAvatar, CommunityAvatar } from 'src/components/avatar';
 import { CommunityHoverProfile } from 'src/components/hoverProfile';

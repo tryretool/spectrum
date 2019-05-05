@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { withRouter } from 'react-router';
 import compose from 'recompose/compose';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { connect } from 'react-redux';
 import getThreadLink from 'src/helpers/get-thread-link';
 import { ThreadListItem } from '../listItems';

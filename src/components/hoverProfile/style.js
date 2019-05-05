@@ -2,7 +2,7 @@
 import theme from 'shared/theme';
 import styled from 'styled-components';
 import { zIndex } from 'src/components/globals';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { MEDIA_BREAK } from 'src/components/layout';
 
 export const HoverWrapper = styled.div`

@@ -5,6 +5,7 @@ import renderComponent from 'recompose/renderComponent';
 import styled from 'styled-components';
 import { Spinner, FlexCol } from '../globals';
 import { Card } from '../card';
+import { RELATIVE_ROOT } from 'shared/constants';
 import { ThreadViewContainer, Detail, Content } from '../../views/thread/style';
 import {
   ShimmerList,
@@ -98,7 +99,7 @@ export const LoadingGallery = (): React$Element<any> => (
 export const LoadingNavbar = (): React$Element<any> => (
   <LoadingNavbarContainer>
     <LogoLink to="/">
-      <Logo src="/img/mark-white.png" role="presentation" />
+      <Logo src={`${RELATIVE_ROOT}/img/mark-white.png`} role="presentation" />
     </LogoLink>
     <LoadingContainer>
       <Spinner size={'20'} color={'bg.default'} />

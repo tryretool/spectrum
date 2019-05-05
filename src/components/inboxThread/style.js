@@ -1,7 +1,7 @@
 // @flow
 import theme from 'shared/theme';
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { zIndex, hexa } from 'src/components/globals';
 
 export const InboxThreadItem = styled.div`

@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { CommunityAvatar } from 'src/components/avatar';
 import { CommunityActions } from './components/communityActions';
 import { CommunityMeta } from './components/communityMeta';

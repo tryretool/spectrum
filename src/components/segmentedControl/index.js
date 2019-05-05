@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { StyledSegmentedControl, StyledSegment } from './style';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 
 type ControlProps = {
   sticky?: boolean,

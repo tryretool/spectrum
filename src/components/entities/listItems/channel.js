@@ -1,7 +1,7 @@
 // @flow
 import React, { useState } from 'react';
 import compose from 'recompose/compose';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import type { ChannelInfoType } from 'shared/graphql/fragments/channel/channelInfo';
 import { ErrorBoundary } from 'src/components/error';
 import { withCurrentUser } from 'src/components/withCurrentUser';

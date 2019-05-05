@@ -3,7 +3,7 @@ import theme from 'shared/theme';
 import styled, { keyframes } from 'styled-components';
 import { Card } from 'src/components/card';
 import { hexa, FlexCol, zIndex } from 'src/components/globals';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { MEDIA_BREAK } from 'src/components/layout';
 
 export const ShimmerList = styled(Card)`

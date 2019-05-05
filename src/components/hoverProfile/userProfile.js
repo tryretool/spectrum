@@ -4,7 +4,7 @@ import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import AvatarImage from 'src/components/avatar/image';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import Badge from 'src/components/badges';
 import { PrimaryOutlineButton, OutlineButton } from 'src/components/button';
 import ConditionalWrap from 'src/components/conditionalWrap';

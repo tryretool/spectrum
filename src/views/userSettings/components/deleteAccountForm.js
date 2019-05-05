@@ -22,7 +22,7 @@ import {
 } from 'src/components/button';
 import deleteCurrentUserMutation from 'shared/graphql/mutations/user/deleteCurrentUser';
 import { SERVER_URL } from 'src/api/constants';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { Loading } from 'src/components/loading';
 import { track, events } from 'src/helpers/analytics';
 import type { Dispatch } from 'redux';

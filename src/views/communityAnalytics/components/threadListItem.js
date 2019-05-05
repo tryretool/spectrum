@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import type { GetThreadType } from 'shared/graphql/queries/thread/getThread';
 import getThreadLink from 'src/helpers/get-thread-link';
 import {

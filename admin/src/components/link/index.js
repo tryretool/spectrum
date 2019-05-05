@@ -2,7 +2,8 @@
 // This is our custom <Link /> component which applies an app update if one is available.
 // See https://zach.codes/handling-client-side-app-updates-with-service-workers/ for more info
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Link from 'src/components/link';
 import { createLocation } from 'history';
 
 type Props = {

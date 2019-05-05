@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import { withApollo } from 'react-apollo';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { PrimaryOutlineButton } from 'src/components/button';
 import Icon from 'src/components/icon';
 import { SERVER_URL, CLIENT_URL } from 'src/api/constants';

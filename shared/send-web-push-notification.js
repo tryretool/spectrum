@@ -1,11 +1,11 @@
 // @flow
 const debug = require('debug')('shared:send-web-push');
 import webPush from 'web-push';
-import { PROD_DOMAIN } from 'shared/constants';
+import { PROD_URL_ROOT } from 'shared/constants';
 
 try {
   webPush.setVapidDetails(
-    `https://${PROD_DOMAIN}`,
+    `https://${PROD_URL_ROOT}`,
     process.env.VAPID_PUBLIC_KEY,
     process.env.VAPID_PRIVATE_KEY
   );

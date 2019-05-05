@@ -20,6 +20,8 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const BundleBuddyWebpackPlugin = require('bundle-buddy-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 
+const RELATIVE_ROOT = process.env.RELATIVE_ROOT || '';
+
 // Recursively walk a folder and get all file paths
 function walkFolder(currentDirPath, callback) {
   fs.readdirSync(currentDirPath).forEach(name => {
@@ -86,6 +88,9 @@ module.exports = function override(config, env) {
         useHashIndex: false,
       })
     );
+  }
+  if (RELATIVE_ROOT) {
+    config.output.publicPath = RELATIVE_ROOT + '/';
   }
   config.plugins.push(
     new ReactLoadablePlugin({
@@ -161,6 +166,7 @@ module.exports = function override(config, env) {
         'process.env': {
           SENTRY_DSN_CLIENT: `"${process.env.SENTRY_DSN_CLIENT}"`,
           AMPLITUDE_API_KEY: `"${process.env.AMPLITUDE_API_KEY}"`,
+          RELATIVE_ROOT: `"${RELATIVE_ROOT}"`,
         },
       })
     );

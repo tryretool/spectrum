@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { html } from 'common-tags';
 import serialize from 'serialize-javascript';
+import { RELATIVE_ROOT } from 'shared/constants';
 
 // Match main.asdf123.js in production mode or bundle.js in dev mode
 const mainBundleRegex = /(main|bundle)\.(?:.*\.)?js$/;
@@ -34,7 +35,7 @@ if (!mainBundle || !bootstrapBundle) {
 }
 
 export const createScriptTag = ({ src }: { src: string }) =>
-  `<script defer="defer" src="${src}"></script>`;
+  `<script defer="defer" src="${RELATIVE_ROOT}${src}"></script>`;
 
 export const getHeader = ({
   metaTags,
@@ -113,7 +114,9 @@ export const getFooter = ({
   )}</script>
       <script nonce="${nonce}">window.__DATA__=${serialize(data)}</script>
       <script defer="defer" type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Symbol.iterator"></script>
-      ${createScriptTag({ src: `/static/js/${bootstrapBundle}` })}
+      ${createScriptTag({
+        src: `/static/js/${bootstrapBundle}`,
+      })}
       ${bundles.map(src => createScriptTag({ src }))}
       ${createScriptTag({ src: `/static/js/${mainBundle}` })}
     </body>

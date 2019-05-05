@@ -13,7 +13,7 @@ import type { Job, ThreadNotificationJobData } from 'shared/bull/types';
 import { getChannelSettings } from '../models/channelSettings';
 import { getChannelById } from '../models/channel';
 import { getCommunitySettings } from '../models/communitySettings';
-import { PROD_DOMAIN } from 'shared/constants';
+import { PROD_URL_ROOT } from 'shared/constants';
 import { truncateString } from '../utils/truncateString';
 import { handleSlackChannelResponse } from '../utils/slack';
 import { decryptString } from 'shared/encryption';
@@ -111,28 +111,28 @@ export default async (job: Job<ThreadNotificationJobData>) => {
               channel.name
             }:`,
             author_name: `${author.name} (@${author.username})`,
-            author_link: `https://${PROD_DOMAIN}/users/${author.username}`,
+            author_link: `https://${PROD_URL_ROOT}/users/${author.username}`,
             author_icon: signedAuthor.profilePhoto,
             pretext: `New conversation published in ${community.name} #${
               channel.name
             }:`,
             title: truncateString(incomingThread.content.title, 80),
-            title_link: `https://${PROD_DOMAIN}/thread/${incomingThread.id}`,
+            title_link: `https://${PROD_URL_ROOT}/thread/${incomingThread.id}`,
             text: truncateString(plainTextBody, 140),
             footer: 'Spectrum',
-            footer_icon: `https://${PROD_DOMAIN}/img/apple-icon-57x57-precomposed.png`,
+            footer_icon: `https://${PROD_URL_ROOT}/img/apple-icon-57x57-precomposed.png`,
             ts: new Date(incomingThread.createdAt).getTime() / 1000,
             color: '#4400CC',
             actions: [
               {
                 type: 'button',
                 text: 'View conversation',
-                url: `https://${PROD_DOMAIN}/thread/${incomingThread.id}`,
+                url: `https://${PROD_URL_ROOT}/thread/${incomingThread.id}`,
               },
               {
                 type: 'button',
                 text: `Message ${author.name}`,
-                url: `https://${PROD_DOMAIN}/users/${author.username}`,
+                url: `https://${PROD_URL_ROOT}/users/${author.username}`,
               },
             ],
           },

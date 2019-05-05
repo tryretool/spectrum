@@ -21,7 +21,7 @@ import rateLimiter from 'shared/middlewares/rate-limiter';
 import middlewares from './routes/middlewares';
 import authRoutes from './routes/auth';
 import apiRoutes from './routes/api';
-import { PROD_DOMAIN } from 'shared/constants';
+import { PROD_URL_ROOT } from 'shared/constants';
 import type { DBUser } from 'shared/types';
 import type { Loader } from './loaders/types';
 
@@ -77,7 +77,7 @@ apolloServer.applyMiddleware({ app, path: '/api', cors: corsOptions });
 app.use('/', (req: express$Request, res: express$Response) => {
   res.redirect(
     process.env.NODE_ENV === 'production' && !process.env.FORCE_DEV
-      ? `https://${PROD_DOMAIN}`
+      ? `https://${PROD_URL_ROOT}`
       : 'http://localhost:3000'
   );
 });

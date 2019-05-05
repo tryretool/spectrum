@@ -1,4 +1,5 @@
 import { setUser, unsetUser } from 'src/helpers/analytics';
+import { RELATIVE_ROOT } from 'shared/constants';
 
 export const logout = () => {
   // no longer track analytics
@@ -12,7 +13,7 @@ export const logout = () => {
       // redirect to home page
       window.location.href =
         process.env.NODE_ENV === 'production'
-          ? '/auth/logout'
+          ? `${RELATIVE_ROOT}/auth/logout`
           : 'http://localhost:3001/auth/logout';
     });
 };

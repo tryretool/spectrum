@@ -3,7 +3,7 @@ import theme from 'shared/theme';
 import styled, { css } from 'styled-components';
 import ReactImage from 'react-image';
 import { zIndex } from '../globals';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { ProfileHeaderAction } from '../profile/style';
 import { MEDIA_BREAK } from 'src/components/layout';
 

@@ -4,7 +4,7 @@ import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import AvatarImage from 'src/components/avatar/image';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { Button, OutlineButton } from 'src/components/button';
 import ToggleChannelMembership from 'src/components/toggleChannelMembership';
 import renderTextWithLinks from 'src/helpers/render-text-with-markdown-links';

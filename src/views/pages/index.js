@@ -8,6 +8,7 @@ import Terms from './terms';
 import Privacy from './privacy';
 import Faq from './faq';
 import Apps from './apps';
+import { RELATIVE_ROOT } from 'shared/constants';
 import { StyledViewGrid } from './style';
 
 type Props = {
@@ -17,28 +18,28 @@ type Props = {
 class Pages extends React.Component<Props> {
   renderPage = () => {
     switch (this.props.match.path) {
-      case '/support': {
+      case `${RELATIVE_ROOT}/support`: {
         return <Support {...this.props} />;
       }
-      case '/features': {
+      case `${RELATIVE_ROOT}/features`: {
         return <Features {...this.props} />;
       }
-      case '/terms':
-      case '/terms.html': {
+      case `${RELATIVE_ROOT}/terms`:
+      case `${RELATIVE_ROOT}/terms.html`: {
         return <Terms {...this.props} />;
       }
-      case '/privacy':
-      case '/privacy.html': {
+      case `${RELATIVE_ROOT}/privacy`:
+      case `${RELATIVE_ROOT}/privacy.html`: {
         return <Privacy {...this.props} />;
       }
-      case '/faq': {
+      case `${RELATIVE_ROOT}/faq`: {
         return <Faq {...this.props} />;
       }
-      case '/apps': {
+      case `${RELATIVE_ROOT}/apps`: {
         return <Apps {...this.props} />;
       }
-      case '/':
-      case '/about':
+      case `${RELATIVE_ROOT}/`:
+      case `${RELATIVE_ROOT}/about`:
       default: {
         return <Home {...this.props} />;
       }
@@ -49,7 +50,8 @@ class Pages extends React.Component<Props> {
     const {
       match: { path },
     } = this.props;
-    const dark = path === '/' || path === '/about';
+    const dark =
+      path === `${RELATIVE_ROOT || '/'}` || path === `${RELATIVE_ROOT}/about`;
 
     return (
       <StyledViewGrid>

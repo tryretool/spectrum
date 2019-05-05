@@ -4,7 +4,7 @@ import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import { PrimaryButton } from 'src/components/button';
 import Icon from 'src/components/icon';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { Logo } from 'src/components/logo';
 import { UserAvatar } from 'src/components/avatar';
 import Head from 'src/components/head';

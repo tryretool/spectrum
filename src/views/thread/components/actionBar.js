@@ -12,7 +12,7 @@ import { LikeButton } from 'src/components/threadLikes';
 import type { GetThreadType } from 'shared/graphql/queries/thread/getThread';
 import { track, events } from 'src/helpers/analytics';
 import getThreadLink from 'src/helpers/get-thread-link';
-import { PROD_DOMAIN } from 'shared/constants';
+import { PROD_URL_ROOT } from 'shared/constants';
 import type { Dispatch } from 'redux';
 import { InputHints, DesktopLink } from 'src/components/composer/style';
 import {
@@ -105,7 +105,7 @@ class ActionBar extends React.Component<Props> {
                       <a
                         href={`https://www.facebook.com/sharer/sharer.php?t=${encodeURIComponent(
                           thread.content.title
-                        )}&u=https://${PROD_DOMAIN}${getThreadLink(thread)}`}
+                        )}&u=https://${PROD_URL_ROOT}${getThreadLink(thread)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -123,7 +123,7 @@ class ActionBar extends React.Component<Props> {
                   <Tooltip content={'Tweet'}>
                     <ShareButton twitter data-cy="thread-tweet-button">
                       <a
-                        href={`https://twitter.com/share?url=https://${PROD_DOMAIN}${getThreadLink(
+                        href={`https://twitter.com/share?url=https://${PROD_URL_ROOT}${getThreadLink(
                           thread
                         )}&text=${encodeURIComponent(
                           thread.content.title

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import type { GetCommunitySettingsType } from 'shared/graphql/queries/community/getCommunitySettings';
 import ViewError from 'src/components/viewError';
 import { Button, OutlineButton } from 'src/components/button';

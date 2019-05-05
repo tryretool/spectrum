@@ -1,7 +1,7 @@
 // @flow
 import styled from 'styled-components';
 import theme from 'shared/theme';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { MEDIA_BREAK } from 'src/components/layout';
 import {
   Truncate,

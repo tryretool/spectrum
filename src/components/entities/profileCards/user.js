@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import type { UserInfoType } from 'shared/graphql/fragments/user/userInfo';
 import { UserAvatar } from 'src/components/avatar';
 import { UserActions } from './components/userActions';

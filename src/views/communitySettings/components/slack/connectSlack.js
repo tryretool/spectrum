@@ -8,7 +8,7 @@ import {
   SectionCardFooter,
 } from 'src/components/settingsViews/style';
 import { OutlineButton } from 'src/components/button';
-import { PROD_DOMAIN } from 'shared/constants';
+import { PROD_URL_ROOT } from 'shared/constants';
 import Icon from 'src/components/icon';
 
 type Props = {
@@ -26,14 +26,14 @@ class ImportSlackTeam extends React.Component<Props> {
         }&redirect_uri=${
           process.env.NODE_ENV === 'development'
             ? 'http://localhost:3001/api/slack/onboarding'
-            : `https://${PROD_DOMAIN}/api/slack/onboarding`
+            : `https://${PROD_URL_ROOT}/api/slack/onboarding`
         }`
       : `https://slack.com/oauth/authorize?client_id=3818108696.625188890277&scope=users:read.email%20users:read%20chat:write:bot%20groups:read%20channels:read&state=${
           community.id
         }&redirect_uri=${
           process.env.NODE_ENV === 'development'
             ? 'http://localhost:3001/api/slack'
-            : `https://${PROD_DOMAIN}/api/slack`
+            : `https://${PROD_URL_ROOT}/api/slack`
         }`;
 
     return (

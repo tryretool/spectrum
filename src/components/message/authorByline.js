@@ -3,7 +3,7 @@ import * as React from 'react';
 import { convertTimestampToTime } from 'shared/time-formatting';
 import ConditionalWrap from 'src/components/conditionalWrap';
 import { UserHoverProfile } from 'src/components/hoverProfile';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import Badge from '../badges';
 import {
   BadgesContainer,

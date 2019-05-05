@@ -9,6 +9,7 @@ import { UserHoverProfile } from 'src/components/hoverProfile';
 import AvatarImage from './image';
 import { Container, AvatarLink, OnlineIndicator } from './style';
 import ConditionalWrap from 'src/components/conditionalWrap';
+import { RELATIVE_ROOT } from 'shared/constants';
 
 type HandlerProps = {
   user?: GetUserType,
@@ -66,7 +67,7 @@ class Avatar extends React.Component<AvatarProps> {
 
     const src = user.profilePhoto;
 
-    const userFallback = '/img/default_avatar.svg';
+    const userFallback = `${RELATIVE_ROOT}/img/default_avatar.svg`;
     const source = [src, userFallback];
 
     return (
@@ -77,10 +78,9 @@ class Avatar extends React.Component<AvatarProps> {
         size={size}
         mobileSize={mobilesize}
       >
-        {showOnlineStatus &&
-          user.isOnline && (
-            <OnlineIndicator onlineBorderColor={onlineBorderColor} />
-          )}
+        {showOnlineStatus && user.isOnline && (
+          <OnlineIndicator onlineBorderColor={onlineBorderColor} />
+        )}
         <ConditionalWrap
           condition={!!user.username && isClickable}
           wrap={() => (

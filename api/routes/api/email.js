@@ -7,7 +7,7 @@ import { Router } from 'express';
 const jwt = require('jsonwebtoken');
 const emailRouter = Router();
 import { updateUserEmail } from 'shared/db/queries/user';
-import { PROD_DOMAIN } from 'shared/constants';
+import { PROD_URL_ROOT } from 'shared/constants';
 import { unsubscribeUserFromEmailNotification } from '../../models/usersSettings';
 import { updateThreadNotificationStatusForUser } from '../../models/usersThreads';
 import { updateDirectMessageThreadNotificationStatusForUser } from '../../models/usersDirectMessageThreads';
@@ -20,7 +20,7 @@ import {
 import { getChannelsByCommunity, getChannelById } from '../../models/channel';
 
 const rootRedirect = IS_PROD
-  ? `https://${PROD_DOMAIN}`
+  ? `https://${PROD_URL_ROOT}`
   : `http://localhost:3000`;
 
 // $FlowIssue
@@ -184,7 +184,7 @@ emailRouter.get('/validate', (req, res) => {
         community =>
           IS_PROD
             ? res.redirect(
-                `https://${PROD_DOMAIN}/${
+                `https://${PROD_URL_ROOT}/${
                   community.slug
                 }/settings?toastType=success&toastMessage=Your email address has been validated!`
               )

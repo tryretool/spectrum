@@ -17,7 +17,7 @@ import {
   SectionSubtitle,
   SectionCardFooter,
 } from 'src/components/settingsViews/style';
-import { Link } from 'react-router-dom';
+import Link from 'src/components/link';
 import { TextButton, OutlineButton } from 'src/components/button';
 import enableCommunityWatercooler from 'shared/graphql/mutations/community/enableCommunityWatercooler';
 import disableCommunityWatercooler from 'shared/graphql/mutations/community/disableCommunityWatercooler';
