@@ -58,7 +58,7 @@ if (!process.env.TEST_DB) {
 
 // Security middleware.
 addSecurityMiddleware(app, { enableNonce: false, enableCSP: false });
-if (false && !process.env.FORCE_DEV) {
+if (process.env.NODE_ENV === 'production' && !process.env.FORCE_DEV) {
   app.use(csrf);
 }
 

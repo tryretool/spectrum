@@ -27,6 +27,8 @@ RUN node shared/install-dependencies.js
 COPY . /spectrum
 
 ENV NODE_ENV production
+# TODO: hmm should unhardcode this
+ENV RELATIVE_ROOT /community
 
 RUN npm run build:api
 RUN npm run build:athena
