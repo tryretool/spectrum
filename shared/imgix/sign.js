@@ -36,7 +36,7 @@ const defaultOpts = {
 
 const signPrimary = (url: string, opts: Opts = defaultOpts): string => {
   const client = new ImgixClient({
-    domains: ['spectrum.imgix.net'],
+    domains: ['retool-spectrum.imgix.net'],
     secureURLToken: process.env.IMGIX_SECURITY_KEY,
   });
   return client.buildURL(url, opts);
@@ -44,7 +44,7 @@ const signPrimary = (url: string, opts: Opts = defaultOpts): string => {
 
 const signProxy = (url: string, opts?: Opts = defaultOpts): string => {
   const client = new ImgixClient({
-    domains: ['spectrum-proxy.imgix.net'],
+    domains: ['retool-spectrum-proxy.imgix.net'],
     secureURLToken: process.env.IMGIX_PROXY_SECURITY_KEY,
   });
   return client.buildURL(url, opts);
