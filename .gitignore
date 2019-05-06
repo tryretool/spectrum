@@ -1,5 +1,6 @@
 node_modules
 .sass-cache
+docker.env
 npm-debug.log
 build
 .DS_Store
