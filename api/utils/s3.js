@@ -31,7 +31,7 @@ const s3 = new AWS.S3();
 // remove the bucket name from the url
 // the bucket name is not required since it is automatically bound
 // to our imgix source
-const generateImageUrl = path => path.replace('spectrum-chat/', '');
+const generateImageUrl = path => path.replace('retool-spectrum/', '');
 
 export const uploadImage = async (
   file: FileUpload,
@@ -53,7 +53,7 @@ export const uploadImage = async (
       throw unsupportedMediaTypeError;
     }
 
-    const path = `spectrum-chat/${entity}/${id}`;
+    const path = `retool-spectrum/${entity}/${id}`;
     const fileKey = `${uuidv4()}-${encoded}`;
     return s3.upload(
       {
