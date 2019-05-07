@@ -5,6 +5,7 @@ import { withCurrentUser } from 'src/components/withCurrentUser';
 import { history } from 'src/helpers/history';
 import queryString from 'query-string';
 import Routes from 'src/hot-routes';
+import { RELATIVE_ROOT } from 'shared/constants';
 
 type Props = {
   currentUser: ?Object,
@@ -23,7 +24,7 @@ class RedirectHandler extends React.Component<Props> {
       // Redirect ?t=asdfxyz to the thread view only for anonymous users who wouldn't see it
       // in their inbox view (since they don't have an inbox view)
       if (!curr.currentUser && params.t) {
-        history.replace(`/thread/${params.t}`);
+        history.replace(`${RELATIVE_ROOT}/thread/${params.t}`);
       }
     }
   }

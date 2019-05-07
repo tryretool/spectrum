@@ -7,6 +7,7 @@ import addCommunityMemberWithTokenMutation from 'shared/graphql/mutations/commun
 import { addToastWithTimeout } from 'src/actions/toasts';
 import CommunityLogin from 'src/views/communityLogin';
 import { CLIENT_URL } from 'src/api/constants';
+import { RELATIVE_ROOT } from 'shared/constants';
 import { withCurrentUser } from 'src/components/withCurrentUser';
 import { ErrorView, LoadingView } from 'src/views/viewHelpers';
 
@@ -33,7 +34,7 @@ class PrivateCommunityJoin extends React.Component<Props, State> {
     const { token, communitySlug } = match.params;
 
     if (!token) {
-      return history.replace(`/${communitySlug}`);
+      return history.replace(`${RELATIVE_ROOT}/${communitySlug}`);
     }
 
     if (!currentUser) {
@@ -66,12 +67,12 @@ class PrivateCommunityJoin extends React.Component<Props, State> {
       .then(() => {
         this.setState({ isLoading: false });
         dispatch(addToastWithTimeout('success', 'Welcome!'));
-        return history.replace(`/${communitySlug}`);
+        return history.replace(`${RELATIVE_ROOT}/${communitySlug}`);
       })
       .catch(err => {
         this.setState({ isLoading: false });
         dispatch(addToastWithTimeout('error', err.message));
-        return history.replace(`/${communitySlug}`);
+        return history.replace(`${RELATIVE_ROOT}/${communitySlug}`);
       });
   };
 

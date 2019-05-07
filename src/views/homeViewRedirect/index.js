@@ -7,6 +7,7 @@ import {
   type GetUserCommunityConnectionType,
 } from 'shared/graphql/queries/user/getUserCommunityConnection';
 import { SERVER_URL } from 'src/api/constants';
+import { RELATIVE_ROOT } from 'shared/constants';
 import { LoadingView } from 'src/views/viewHelpers';
 import type { History } from 'react-router';
 
@@ -33,7 +34,7 @@ const HomeViewRedirect = (props: Props) => {
   const communities = edges.map(edge => edge && edge.node);
   // if the user hasn't joined any communities yet, help them find some
   if (!communities || communities.length === 0) {
-    history.replace('/explore');
+    history.replace(`${RELATIVE_ROOT}/explore`);
     return null;
   }
 
@@ -52,7 +53,7 @@ const HomeViewRedirect = (props: Props) => {
       return val;
     });
 
-    history.replace(`/${sorted[0].slug}`);
+    history.replace(`${RELATIVE_ROOT}/${sorted[0].slug}`);
     return null;
   }
 
@@ -73,7 +74,7 @@ const HomeViewRedirect = (props: Props) => {
     });
 
   const first = sorted[0];
-  history.replace(`/${first.slug}`);
+  history.replace(`${RELATIVE_ROOT}/${first.slug}`);
   return null;
 };
 

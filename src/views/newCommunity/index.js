@@ -14,6 +14,7 @@ import Share from './components/share';
 import Head from 'src/components/head';
 import Login from 'src/views/login';
 import { setTitlebarProps } from 'src/actions/titlebar';
+import { RELATIVE_ROOT } from 'shared/constants';
 import { getCommunityByIdQuery } from 'shared/graphql/queries/community/getCommunity';
 import type { GetCommunityType } from 'shared/graphql/queries/community/getCommunity';
 import getCurrentUserSettings, {
@@ -107,7 +108,7 @@ class NewCommunity extends React.Component<Props, State> {
     const { activeStep, community } = this.state;
     let newStep = direction === 'next' ? activeStep + 1 : activeStep - 1;
     this.props.history.replace(
-      `/new/community?s=${newStep}${community &&
+      `${RELATIVE_ROOT}/new/community?s=${newStep}${community &&
         community.id &&
         `&id=${community.id}`}`
     );
@@ -162,7 +163,9 @@ class NewCommunity extends React.Component<Props, State> {
     this.setState({
       community: { ...community },
     });
-    this.props.history.replace(`/new/community?id=${community.id}`);
+    this.props.history.replace(
+      `${RELATIVE_ROOT}/new/community?id=${community.id}`
+    );
     return this.step('next');
   };
 

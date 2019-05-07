@@ -16,6 +16,7 @@ import deleteMessage from 'shared/graphql/mutations/message/deleteMessage';
 import type { DeleteMessageType } from 'shared/graphql/mutations/message/deleteMessage';
 import archiveChannel from 'shared/graphql/mutations/channel/archiveChannel';
 import removeCommunityMember from 'shared/graphql/mutations/communityMember/removeCommunityMember';
+import { RELATIVE_ROOT } from 'shared/constants';
 
 import ModalContainer from '../modalContainer';
 import { TextButton, WarnButton } from 'src/components/button';
@@ -124,7 +125,7 @@ class DeleteDoubleCheckModal extends React.Component<Props, State> {
           .then(({ data }: DeleteThreadType) => {
             const { deleteThread } = data;
             if (deleteThread) {
-              history.replace(`/${community.slug}?tab=posts`);
+              history.replace(`${RELATIVE_ROOT}/${community.slug}?tab=posts`);
               dispatch(addToastWithTimeout('neutral', 'Thread deleted.'));
               this.setState({
                 isLoading: false,

@@ -15,6 +15,7 @@ import { client } from 'shared/graphql';
 import { initStore } from 'src/store';
 import { track, events } from 'src/helpers/analytics';
 import { wsLink } from 'shared/graphql';
+import { RELATIVE_ROOT } from 'shared/constants';
 import { subscribeToDesktopPush } from 'src/subscribe-to-desktop-push';
 import RedirectHandler from 'src/components/redirectHandler';
 const params = queryString.parse(history.location.search);
@@ -24,9 +25,9 @@ const params = queryString.parse(history.location.search);
 const threadParam = params.thread || params.t;
 if (threadParam) {
   if (params.m) {
-    history.replace(`/thread/${threadParam}?m=${params.m}`);
+    history.replace(`${RELATIVE_ROOT}/thread/${threadParam}?m=${params.m}`);
   } else {
-    history.replace(`/thread/${threadParam}`);
+    history.replace(`${RELATIVE_ROOT}/thread/${threadParam}`);
   }
 }
 // If the server passes an initial redux state use that, otherwise construct our own

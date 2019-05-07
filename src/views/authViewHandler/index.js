@@ -6,6 +6,7 @@ import { withRouter, type History, type Location } from 'react-router';
 import { getCurrentUser } from 'shared/graphql/queries/user/getUser';
 import type { GetUserType } from 'shared/graphql/queries/user/getUser';
 import editUserMutation from 'shared/graphql/mutations/user/editUser';
+import { RELATIVE_ROOT } from 'shared/constants';
 import NewUserOnboarding from 'src/views/newUserOnboarding';
 
 type Props = {
@@ -36,7 +37,8 @@ class AuthViewHandler extends React.Component<Props> {
         } catch (err) {}
       }
 
-      if (location.pathname === '/home') history.replace('/');
+      if (location.pathname === `${RELATIVE_ROOT}/home`)
+        history.replace(`${RELATIVE_ROOT}/`);
     }
   }
 
