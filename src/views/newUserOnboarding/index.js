@@ -9,6 +9,7 @@ import SetUsername from './components/setUsername';
 import { track, events } from 'src/helpers/analytics';
 import type { UserInfoType } from 'shared/graphql/fragments/user/userInfo';
 import { SERVER_URL } from 'src/api/constants';
+import { RELATIVE_ROOT } from 'shared/constants';
 import { setTitlebarProps } from 'src/actions/titlebar';
 import { ViewGrid, CenteredGrid } from 'src/components/layout';
 import { LogOutButton, Emoji, Heading, Description, Card } from './style';
@@ -35,7 +36,7 @@ class NewUserOnboarding extends React.Component<Props> {
     const { state } = location;
     track(events.USER_ONBOARDING_SET_USERNAME);
     if (state && state.redirect) return history.replace(state.redirect);
-    return history.replace('/');
+    return history.replace(`${RELATIVE_ROOT}/`);
   };
 
   render() {

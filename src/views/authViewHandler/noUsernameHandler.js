@@ -1,6 +1,7 @@
 // @flow
 import compose from 'recompose/compose';
 import { withRouter, type Location, type History } from 'react-router-dom';
+import { RELATIVE_ROOT } from 'shared/constants';
 import {
   getCurrentUser,
   type GetUserType,
@@ -20,9 +21,10 @@ const NoUsernameHandler = (props: Props) => {
   if (!user) return null;
   if (user && user.username) return null;
   const { pathname, search } = location;
-  if (pathname === '/new/user') return null;
+  const newUserFormPathname = `${RELATIVE_ROOT}/new/user`;
+  if (pathname.includes('/new/user')) return null;
   history.replace({
-    pathname: '/new/user',
+    pathname: newUserFormPathname,
     state: { redirect: `${pathname}${search}` },
   });
   return null;
