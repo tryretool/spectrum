@@ -23,8 +23,8 @@ type Options = {
 
 const defaultOptions = {
   from: {
-    email: 'hi@spectrum.chat',
-    name: 'Spectrum',
+    email: 'hi@tryretool.com',
+    name: 'Retool',
   },
   tracking_settings: {
     click_tracking: {
