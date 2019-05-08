@@ -53,6 +53,22 @@ class LoginButtonSet extends React.Component<Props> {
 
     return (
       <Container>
+        <TwitterSigninButton
+          onClickHandler={this.saveLoginMethod}
+          href={`${SERVER_URL}/auth/twitter${postAuthRedirectPath}`}
+          preferred={nonePreferred ? true : preferredSigninMethod === 'twitter'}
+          showAfter={preferredSigninMethod === 'twitter'}
+        />
+
+        <FacebookSigninButton
+          onClickHandler={this.saveLoginMethod}
+          href={`${SERVER_URL}/auth/facebook${postAuthRedirectPath}`}
+          preferred={
+            nonePreferred ? true : preferredSigninMethod === 'facebook'
+          }
+          showAfter={preferredSigninMethod === 'facebook'}
+        />
+
         <GoogleSigninButton
           onClickHandler={this.saveLoginMethod}
           href={`${SERVER_URL}/auth/google${postAuthRedirectPath}`}
