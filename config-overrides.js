@@ -21,6 +21,7 @@ const BundleBuddyWebpackPlugin = require('bundle-buddy-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 const RELATIVE_ROOT = process.env.RELATIVE_ROOT || '';
+const PUBLIC_URL = process.env.PUBLIC_URL || '';
 
 // Recursively walk a folder and get all file paths
 function walkFolder(currentDirPath, callback) {
@@ -167,6 +168,7 @@ module.exports = function override(config, env) {
           SENTRY_DSN_CLIENT: `"${process.env.SENTRY_DSN_CLIENT}"`,
           AMPLITUDE_API_KEY: `"${process.env.AMPLITUDE_API_KEY}"`,
           RELATIVE_ROOT: `"${RELATIVE_ROOT}"`,
+          PUBLIC_URL: `"${PUBLIC_URL}"`,
         },
       })
     );
