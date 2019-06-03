@@ -104,8 +104,8 @@ export default requireAuth(async (_: any, args: Input, ctx: GraphQLContext) => {
 
     const stripQueryParams = (str: string): string => {
       if (
-        str.indexOf('https://spectrum.imgix.net') < 0 &&
-        str.indexOf('https://spectrum-proxy.imgix.net') < 0
+        str.indexOf('https://retool-spectrum.imgix.net') < 0 &&
+        str.indexOf('https://retool-spectrum-proxy.imgix.net') < 0
       ) {
         return str;
       }
