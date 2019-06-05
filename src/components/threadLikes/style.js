@@ -12,7 +12,7 @@ export const LikeButtonWrapper = styled(Button)`
   border: 1px solid ${theme.bg.border};
   color: ${props =>
     props.hasReacted ? props.theme.brand.alt : props.theme.text.alt};
-  display: flex;
+  display: none;
   align-items: center;
   overflow: hidden;
   padding: 0;
@@ -43,7 +43,7 @@ export const LikeButtonWrapper = styled(Button)`
 `;
 
 export const LikeCountWrapper = styled.div`
-  display: flex;
+  display: none;
   align-items: center;
   margin-right: 12px;
   color: ${props =>
