@@ -11,9 +11,11 @@ const trustedHosts = [
   process.env.NOW_URL &&
     new RegExp(`^${process.env.NOW_URL.replace('https://', '')}$`),
   /^tryretool\.com$/,
+  /^retool\.com$/,
   /^retool\.be$/,
   // All subdomains
   /^.*\.tryretool\.com$/,
+  /^.*\.retool\.com$/,
   /^.*\.retool\.be$/,
 ].filter(Boolean);
 
@@ -21,9 +23,11 @@ const trustedHosts = [
 const trustedReferers = [
   process.env.NOW_URL && new RegExp(`^${process.env.NOW_URL}($|\/.*)`),
   /^https:\/\/tryretool\.com($|\/.*)/,
+  /^https:\/\/retool\.com($|\/.*)/,
   /^https:\/\/retool\.be($|\/.*)/,
   // All subdomains
   /^https:\/\/.*\.tryretool\.com($|\/.*)/,
+  /^https:\/\/.*\.retool\.com($|\/.*)/,
   /^https:\/\/.*\.retool\.be($|\/.*)/,
 ].filter(Boolean);
 

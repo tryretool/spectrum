@@ -54,6 +54,7 @@ export const getHeader = ({
         <link rel="mask-icon" href="/img/pinned-tab.svg" color="#171A21">
         <meta name="theme-color" content="#171A21">
         <link rel="manifest" href="/manifest.json">
+        <link rel="canonical" href="https://retool.com/community/" />
         <meta property="og:site_name" content="Spectrum">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@withspectrum">
